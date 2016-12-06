@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Science Project</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+    <script src="https://code.highcharts.com/highcharts-3d.js"></script>
+    <script src="main.js"></script>
+    <link  type="text/css" rel="stylesheet" href="main.css">
+</head>
+<body>
+
+    <header><img src="images/usu-logo.jpg" style="height: 100%;width: 16%;">
+         <h1 align="center">Data Science Project</h1>
+         <h2 align="center">By Anuj Khasgiwala, Bhagyashree Mandora, Meiling Long</h2>
+    </header>
+
+    <ul class="tab">
+        <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'explore')" id="defaultOpen">Explore Data and Analysis</a></li>
+        <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'learn')">Machine Learning</a></li>
+        <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'outcome')">Result</a></li>
+        <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'app')">Recognizer</a></li>
+    </ul>
+
+    <div id="explore" class="tabcontent">
+        <!--<h3>explore data and analysis</h3>-->
+        <h4 class="desTitle">Hypothesis test using Welch's t-test method</h4>
+        <div id="code" style="width:60%; height:400px; margin: auto">
+            <img src="images/welchtest.png" style="width:60%; height:400px; margin: auto">
+        </div>
+        <p class="description">Welch's t-test method is a location test used to compare the medians of two data sets. Here,
+            a proposition that <i>generally</i> a male voice fundamental frequency is greater or lesser that of the female
+            voice, is tested. The p-value obtained should be less than 5%.</p>
+        <h4 class="desTitle">Comparison of Importance of Different Acoustic Characteristics for Predicting Gender</h4>
+        <div id="container2" style="width:60%; height:400px; margin: auto">
+            <img src="images/boxplot.png" style="width:100%; height:400px; margin: auto">
+        </div>
+        <p class="description">This is the visual representation of the hypothesis through boxplot. The chart considers four acoustic
+            features used for differentiating between male and female voice. Since there is a greater difference in
+            the median values of “Mean Fundamental Frequency” for male and female voice, this feature may be a good
+            factor in the classification. Similarly, a smaller difference in the median values of “Modulation Index”
+            for male and female in the boxplot shows the lesser importance of the feature in gender prediction.</p>
+        <h4 class="desTitle">Realtive Importance of Acoustic Characteristics in prediction of Gender</h4>
+        <div id="container4" style="width:60%; height:400px; margin: auto">
+        </div>
+        <p class="description">The figure shows the relative contribution of an acoustic characteristic to the classification
+            of audio into gender. The ranking is as per the Information Gain heuristic.</p>
+        <h4 class="desTitle">Accuracy Variation on Removing a Feature</h4>
+        <div id="container3" style="width:60%; height:400px; margin: auto">
+        </div>
+        <p class="description">Trend of accuracy using Neural Network when the feature was removed. The features on the X-axis are arranged
+            in the order of increasing importance where the first value is accuracy using all features. The general
+            trend shows a decrease in accuracy when an important feature is removed and an increase when a less
+            important one is removed.</p>
+    </div>
+
+    <div id="learn" class="tabcontent">
+        <!--<h3>machine learning</h3>-->
+        <h4 class="desTitle">Algorithm VS.Accuracy in prediction of Gender</h4>
+        <div id="container" style="width:60%; height:400px; margin: auto">
+        </div>
+        <p class="description">Variation in accuracy with algorithm used for prediction of gender. The results are obtained through 10
+            fold-cross-validation over the training set.</p>
+        <h4 class="desTitle">Decision Tree Showing Classification</h4>
+        <div id="container5" style="width:60%; height:400px; margin: auto">
+            <img src="images/tree.jpg" style="width:100%; height:400px; margin: auto">
+        </div>
+        <p class="description">A tree showing the classification based on the features and the split value.</p>
+    </div>
+
+    <div id="outcome" class="tabcontent">
+        <!--<h3>Report,findings,result</h3>-->
+        <div id="container1" style="width:60%; height:400px; margin: auto">
+            <ul>
+                <li id="rsltli1">Gender can be successfully predicted with more than 95% accuracy</li>
+                <li id="rsltli2">Mean Fundamental Frequency is an important feature for classification with a
+                    value of 142 Hz as a boundary between male and female voice.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="app" class="tabcontent">
+        <form class="interact">
+            <h3>Gender, Accent Recognizer</h3>
+            <h4 class="command">Select audio file:</h4>
+            <input type="file" id="audioFile">
+            <h4 class="command">Predict:</h4>
+            <input id="check1" type="checkbox" name="gender" value="Gender"><p class="des">Gender</p>
+            <input id="check2" type="checkbox" name="accent" value="Accent"><p class="des">Accent</p>
+            <div class="sub">
+                <input id="submit" type="button" value="Submit">
+            </div>
+            <h4>Result:</h4>
+            <div id="result"><p id="showResult"></p></div>
+        </form>
+    </div>
+
+    <footer>@2016 USU</footer>
+</body>
+</html>
