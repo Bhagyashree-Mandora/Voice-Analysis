@@ -67,7 +67,7 @@ their voice. This is true in phone conversations or recorded audio from business
 <p>This report describes the design of a computer program to model acoustic analysis of voices and speech for determining gender. The model is constructed using 3,168 recorded samples of male and female voices, speech, and utterances. The samples are processed using acoustic analysis and then applied to an artificial intelligence/machine learning algorithm to learn gender specific traits.</p>
 
 <p>Machine learning algorithms like XGBoost, SVM, Random Forest and Neural Networks and audio processing libraries are employed to predict the outcomes. The resulting program achieves more than 95\% accuracy on the test set.
-<img src="https://github.com/Bhagyashree-Mandora/Voice-Analysis/blob/master/images/problem%20description.png" alt=""># </p>
+<img src="https://github.com/Bhagyashree-Mandora/Voice-Analysis/blob/master/images/problem%20description.png" alt=""></p>
 
 <h2>
 <a id="process" class="anchor" href="#process" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><strong>Process</strong>
@@ -126,8 +126,8 @@ duration: length of signal</p>
 <p>Analysis of Importance of Acoustic Characteristics:
 1. Hypothesis Test  A proposition was tested with Welch Two Sample t-test method, which is a location test used to compare the medians of two data sets.Here,a proposition that generally a male voice feature is greater or lesser than that of female voice feature is tested. The p-value obtained should be less than 5%.
 2. Visual Representation through Boxplot
-<img src="https://github.com/Bhagyashree-Mandora/Voice-Analysis/blob/master/images/boxplot%20variation%20in%20features.png" alt="">#
-<img src="https://github.com/Bhagyashree-Mandora/Voice-Analysis/blob/master/images/donut.jpg" alt="">#</p>
+<img src="https://github.com/Bhagyashree-Mandora/Voice-Analysis/blob/master/images/boxplot%20variation%20in%20features.png" alt="">
+<img src="https://github.com/Bhagyashree-Mandora/Voice-Analysis/blob/master/images/donut.jpg" alt=""></p>
 
 <h2>
 <a id="results" class="anchor" href="#results" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><strong>Results</strong>
@@ -135,12 +135,14 @@ duration: length of signal</p>
 
 <ol>
 <li>The model can successfully predict the gender with a good accuracy. Gender classification based on voice characteristics is based primarily on Mean Fundamental Frequency and a value of 142 Hz forms a boundary between male and female voice.
-<img src="https://github.com/Bhagyashree-Mandora/Voice-Analysis/blob/master/images/decisiontree.jpeg" alt="">#</li>
+<img src="https://github.com/Bhagyashree-Mandora/Voice-Analysis/blob/master/images/decisiontree.jpeg" alt="">
+</li>
 <li>Varying the Features used  for  Training  and Prediction. Each voice feature was removed from the training and test set one by one and the accuracy was tested on 80% test split data using a Neural Network. A fall in accuracy was noticed when an important feature was removed. However, an increase in accuracy was also obtained when a less important feature was not considered. This may have been due to reduction in noise for prediction.
-<img src="https://github.com/Bhagyashree-Mandora/Voice-Analysis/blob/master/images/takeout-sorted%20by%20accuracy.jpeg" alt="">#</li>
+<img src="https://github.com/Bhagyashree-Mandora/Voice-Analysis/blob/master/images/takeout-sorted%20by%20accuracy.jpeg" alt="">
+</li>
 <li>Five algorithms were used to predict gender and the accuracy obtained is as shown in the chart. SVM showed a comparatively low accuracy. This may have been due to error introduced due to a large number of support vectors found near the separating hyper-plane between male and female values for the feature. Any noisy data leads to a wrong prediction.
-<img src="https://github.com/Bhagyashree-Mandora/Voice-Analysis/blob/master/images/svm.jpeg" alt="">#
-<img src="https://github.com/Bhagyashree-Mandora/Voice-Analysis/blob/master/images/Algorithm%20vs%20Accuracy.jpg" alt="">#
+<img src="https://github.com/Bhagyashree-Mandora/Voice-Analysis/blob/master/images/svm.jpeg" alt="">
+<img src="https://github.com/Bhagyashree-Mandora/Voice-Analysis/blob/master/images/Algorithm%20vs%20Accuracy.jpg" alt="">
 In the above models, it can be seen how the accuracy of classifying male or female voices was increased by including all available acoustic properties of the voices and speech.Determining a male or female voice does, indeed, utilize more than a simple measurement of average frequency. To demonstrate this, several new voice samples were applied to the model, each using different intonation. For example, the first voice sample used flat or dropping frequency at the end of sentences. A second sample used a rising frequency at the end of sentences. When combined with voice frequency and pitch(i.e., male vs female voice range), this difference in lowering or rising of the voice at the end of a sentence would occasionally signify the difference in a classification of male or female. This is especially true when the male and female voice samples were within a similar, androgynous, frequency range.The above described type of classification makes sense, as male and female speakers will often use changing into nations to express parts of speech. Female voices tend to rise and fall more dramatically than their male counterparts, which might account for this difference</li>
 </ol>
 
